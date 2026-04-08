@@ -16,7 +16,7 @@ def _build_prompt(endpoint):
     for code, desc in endpoint["responses"].items():
         responses_text += f"  {code}: {desc}\n"
 
-    return f"""You are a QA engineer. Generate comprehensive test cases for the following REST API endpoint.
+    return f"""Act as senior API test engineer, Generate comprehensive API test matrices from OpenAPI operation fragments. Emit ONLY strict JSON that conforms to the given schema.
 
 Endpoint: {endpoint['method']} {endpoint['path']}
 Summary: {endpoint['summary']}

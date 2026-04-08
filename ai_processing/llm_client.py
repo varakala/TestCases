@@ -2,8 +2,11 @@ import json
 import requests
 from prompt_engine.prompt_builder import _build_prompt
 from validation_layer.validator import _parse_test_cases
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "mistral"
+OLLAMA_URL = "http://localhost:11434/api/chat"
+
+#/api/generate
+MODEL = "llama3.2"
+
 def generate_test_cases(endpoint):
     """Generate test cases for a single API endpoint using Ollama Mistral."""
     prompt = _build_prompt(endpoint)
