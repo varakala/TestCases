@@ -1,22 +1,61 @@
 import json
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 def _build_prompt(endpoint):
     """Build a detailed prompt for test case generation."""
-    params_text = ""
-    if endpoint["parameters"]:
-        params_text = "Parameters:\n"
-        for p in endpoint["parameters"]:
-            params_text += f"  - {p['name']} (in: {p['in']}, type: {p['type']}, required: {p['required']}): {p['description']}\n"
+    logger.debug(
+        "Building prompt | method=%s | path=%s",
+        endpoint.get("method"),
+        endpoint.get("path"),
+    )
 
+    # ------------------------------------------------------------------
+    # Parameters section
+    # ------------------------------------------------------------------
+    params_text = ""
+    parameters = endpoint.get("parameters", [])
+    if parameters:
+        logger.debug("Adding parameters to prompt | count=%d", len(parameters))
+        params_text = "Parameters:\n"
+        for p in parameters:
+            params_text += (
+                f"  - {p['name']} "
+                f"(in: {p['in']}, type: {p['type']}, required: {p['required']}): "
+                f"{p['description']}\n"
+            )
+
+    # ------------------------------------------------------------------
+    # Request body section
+    # ------------------------------------------------------------------
     body_text = ""
-    if endpoint["request_body"]:
-        body_text = f"Request Body ({endpoint['request_body']['content_type']}):\n"
-        body_text += f"  Schema: {json.dumps(endpoint['request_body']['schema'], indent=2)}\n"
+    request_body = endpoint.get("request_body")
+    if request_body:
+        logger.debug(
+            "Adding request body to prompt | content_type=%s",
+            request_body.get("content_type"),
+        )
+        body_text = f"Request Body ({request_body['content_type']}):\n"
+        body_text += (
+            f"  Schema: {json.dumps(request_body['schema'], indent=2)}\n"
+        )
+
+    # ------------------------------------------------------------------
+    # Responses section
+    # ------------------------------------------------------------------
+    responses = endpoint.get("responses", {})
+    logger.debug("Adding responses to prompt | count=%d", len(responses))
 
     responses_text = "Responses:\n"
-    for code, desc in endpoint["responses"].items():
+    for code, desc in responses.items():
         responses_text += f"  {code}: {desc}\n"
 
-    return f"""Act as senior API test engineer, Generate comprehensive API test matrices from OpenAPI operation fragments. Emit ONLY strict JSON that conforms to the given schema.
+    # ------------------------------------------------------------------
+    # Final prompt assembly
+    # ------------------------------------------------------------------
+    prompt = f"""You are a QA engineer. Generate comprehensive test cases for the following REST API endpoint.
 
 Endpoint: {endpoint['method']} {endpoint['path']}
 Summary: {endpoint['summary']}
@@ -50,3 +89,12 @@ For EACH test case, respond in this exact JSON format (return a JSON array):
 
 Return ONLY the JSON array, no other text.
 """
+
+    logger.info(
+        "Prompt built successfully | method=%s | path=%s | length=%d chars",
+        endpoint.get("method"),
+        endpoint.get("path"),
+        len(prompt),
+    )
+
+    return prompt
