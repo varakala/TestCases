@@ -2071,3 +2071,660 @@ Traceback (most recent call last):
     raise HTTPError(http_error_msg, response=self)
 requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
 2026-04-15 15:11:42,245 | ERROR | __main__ | No test cases were generated
+2026-04-15 17:02:31,091 | INFO | __main__ | Application started
+2026-04-15 17:02:31,092 | INFO | __main__ | Arguments received | swagger_url=https://petstore3.swagger.io/api/v3/openapi.json | output=output.xlsx
+2026-04-15 17:02:31,093 | INFO | __main__ | Fetching Swagger spec
+2026-04-15 17:02:31,093 | INFO | input_layer.swagger_parser | Fetching Swagger spec | url=https://petstore3.swagger.io/api/v3/openapi.json
+2026-04-15 17:02:33,047 | INFO | input_layer.swagger_parser | Swagger spec parsed as JSON
+2026-04-15 17:02:33,050 | INFO | __main__ | Swagger spec fetched successfully
+2026-04-15 17:02:33,050 | INFO | __main__ | API identified | title=Swagger Petstore - OpenAPI 3.0 | version=1.0.27
+2026-04-15 17:02:33,051 | INFO | input_layer.swagger_parser | Extracting endpoints from Swagger spec
+2026-04-15 17:02:33,051 | INFO | input_layer.swagger_parser | Endpoint extraction complete | total=19
+2026-04-15 17:02:33,051 | INFO | __main__ | Endpoints extracted | count=19
+2026-04-15 17:02:33,052 | INFO | __main__ | Processing endpoint [1/19] | PUT /pet
+2026-04-15 17:02:33,052 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet
+2026-04-15 17:02:33,052 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=PUT | path=/pet | length=2298 chars
+2026-04-15 17:02:33,052 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:35,099 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:35,102 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:35,103 | ERROR | __main__ | Failed to generate test cases | endpoint=PUT /pet
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:35,105 | INFO | __main__ | Processing endpoint [2/19] | POST /pet
+2026-04-15 17:02:35,105 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet
+2026-04-15 17:02:35,105 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=POST | path=/pet | length=2274 chars
+2026-04-15 17:02:35,106 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:37,145 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:37,146 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:37,147 | ERROR | __main__ | Failed to generate test cases | endpoint=POST /pet
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:37,148 | INFO | __main__ | Processing endpoint [3/19] | GET /pet/findByStatus
+2026-04-15 17:02:37,148 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet/findByStatus
+2026-04-15 17:02:37,149 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/pet/findByStatus | length=1238 chars
+2026-04-15 17:02:37,149 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:39,188 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:39,189 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet/findByStatus
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:39,190 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /pet/findByStatus
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:39,191 | INFO | __main__ | Processing endpoint [4/19] | GET /pet/findByTags
+2026-04-15 17:02:39,192 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet/findByTags
+2026-04-15 17:02:39,192 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/pet/findByTags | length=1219 chars
+2026-04-15 17:02:39,192 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:41,221 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:41,222 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet/findByTags
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:41,223 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /pet/findByTags
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:41,225 | INFO | __main__ | Processing endpoint [5/19] | GET /pet/{petId}
+2026-04-15 17:02:41,225 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet/{petId}
+2026-04-15 17:02:41,225 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/pet/{petId} | length=1167 chars
+2026-04-15 17:02:41,225 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:43,263 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:43,264 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet/{petId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:43,265 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /pet/{petId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:43,267 | INFO | __main__ | Processing endpoint [6/19] | POST /pet/{petId}
+2026-04-15 17:02:43,267 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet/{petId}
+2026-04-15 17:02:43,268 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=POST | path=/pet/{petId} | length=1392 chars
+2026-04-15 17:02:43,268 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:45,314 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:45,315 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet/{petId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:45,316 | ERROR | __main__ | Failed to generate test cases | endpoint=POST /pet/{petId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:45,318 | INFO | __main__ | Processing endpoint [7/19] | DELETE /pet/{petId}
+2026-04-15 17:02:45,319 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet/{petId}
+2026-04-15 17:02:45,319 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=DELETE | path=/pet/{petId} | length=1184 chars
+2026-04-15 17:02:45,319 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:47,348 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:47,349 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet/{petId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:47,351 | ERROR | __main__ | Failed to generate test cases | endpoint=DELETE /pet/{petId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:47,352 | INFO | __main__ | Processing endpoint [8/19] | POST /pet/{petId}/uploadImage
+2026-04-15 17:02:47,353 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/pet/{petId}/uploadImage
+2026-04-15 17:02:47,353 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=POST | path=/pet/{petId}/uploadImage | length=1365 chars
+2026-04-15 17:02:47,354 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:49,405 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:49,406 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/pet/{petId}/uploadImage
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:49,407 | ERROR | __main__ | Failed to generate test cases | endpoint=POST /pet/{petId}/uploadImage
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:49,408 | INFO | __main__ | Processing endpoint [9/19] | GET /store/inventory
+2026-04-15 17:02:49,409 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/store/inventory
+2026-04-15 17:02:49,409 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/store/inventory | length=1082 chars
+2026-04-15 17:02:49,414 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:51,471 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:51,472 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/store/inventory
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:51,473 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /store/inventory
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:51,475 | INFO | __main__ | Processing endpoint [10/19] | POST /store/order
+2026-04-15 17:02:51,476 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/store/order
+2026-04-15 17:02:51,477 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=POST | path=/store/order | length=1794 chars
+2026-04-15 17:02:51,478 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:53,527 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:53,529 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/store/order
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:53,530 | ERROR | __main__ | Failed to generate test cases | endpoint=POST /store/order
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:53,533 | INFO | __main__ | Processing endpoint [11/19] | GET /store/order/{orderId}
+2026-04-15 17:02:53,534 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/store/order/{orderId}
+2026-04-15 17:02:53,547 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/store/order/{orderId} | length=1288 chars
+2026-04-15 17:02:53,548 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:55,587 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:55,589 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/store/order/{orderId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:55,590 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /store/order/{orderId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:55,592 | INFO | __main__ | Processing endpoint [12/19] | DELETE /store/order/{orderId}
+2026-04-15 17:02:55,593 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/store/order/{orderId}
+2026-04-15 17:02:55,593 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=DELETE | path=/store/order/{orderId} | length=1315 chars
+2026-04-15 17:02:55,594 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:57,669 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:57,671 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/store/order/{orderId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:57,672 | ERROR | __main__ | Failed to generate test cases | endpoint=DELETE /store/order/{orderId}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:57,674 | INFO | __main__ | Processing endpoint [13/19] | POST /user
+2026-04-15 17:02:57,675 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user
+2026-04-15 17:02:57,675 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=POST | path=/user | length=1807 chars
+2026-04-15 17:02:57,676 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:02:59,721 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:59,723 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:59,724 | ERROR | __main__ | Failed to generate test cases | endpoint=POST /user
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:02:59,726 | INFO | __main__ | Processing endpoint [14/19] | POST /user/createWithList
+2026-04-15 17:02:59,727 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user/createWithList
+2026-04-15 17:02:59,727 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=POST | path=/user/createWithList | length=1968 chars
+2026-04-15 17:02:59,728 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:03:01,771 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:01,772 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user/createWithList
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:01,774 | ERROR | __main__ | Failed to generate test cases | endpoint=POST /user/createWithList
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:01,776 | INFO | __main__ | Processing endpoint [15/19] | GET /user/login
+2026-04-15 17:03:01,777 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user/login
+2026-04-15 17:03:01,777 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/user/login | length=1273 chars
+2026-04-15 17:03:01,777 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:03:03,824 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:03,826 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user/login
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:03,827 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /user/login
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:03,829 | INFO | __main__ | Processing endpoint [16/19] | GET /user/logout
+2026-04-15 17:03:03,830 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user/logout
+2026-04-15 17:03:03,830 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/user/logout | length=1066 chars
+2026-04-15 17:03:03,830 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:03:05,878 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:05,880 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user/logout
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:05,881 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /user/logout
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:05,883 | INFO | __main__ | Processing endpoint [17/19] | GET /user/{username}
+2026-04-15 17:03:05,884 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user/{username}
+2026-04-15 17:03:05,884 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=GET | path=/user/{username} | length=1238 chars
+2026-04-15 17:03:05,884 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:03:07,933 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:07,935 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user/{username}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:07,936 | ERROR | __main__ | Failed to generate test cases | endpoint=GET /user/{username}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:07,938 | INFO | __main__ | Processing endpoint [18/19] | PUT /user/{username}
+2026-04-15 17:03:07,938 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user/{username}
+2026-04-15 17:03:07,939 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=PUT | path=/user/{username} | length=1963 chars
+2026-04-15 17:03:07,939 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:03:09,969 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:09,971 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user/{username}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:09,972 | ERROR | __main__ | Failed to generate test cases | endpoint=PUT /user/{username}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:09,974 | INFO | __main__ | Processing endpoint [19/19] | DELETE /user/{username}
+2026-04-15 17:03:09,975 | INFO | ai_processing.llm_client | Generating test cases | endpoint=/user/{username}
+2026-04-15 17:03:09,975 | INFO | prompt_engine.prompt_builder | Prompt built successfully | method=DELETE | path=/user/{username} | length=1219 chars
+2026-04-15 17:03:09,975 | INFO | ai_processing.llm_client | Calling Ollama API | model=mistral
+2026-04-15 17:03:12,050 | ERROR | ai_processing.llm_client | HTTP error while calling Ollama | url=http://localhost:11434/api/generate
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:12,052 | ERROR | ai_processing.llm_client | Failed to generate test cases | endpoint=/user/{username}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:12,054 | ERROR | __main__ | Failed to generate test cases | endpoint=DELETE /user/{username}
+Traceback (most recent call last):
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\app.py", line 94, in main
+    cases = generate_test_cases(endpoint)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 32, in generate_test_cases
+    response = _call_ollama(prompt)
+  File "C:\Kiran\SourceCode\AgentAI\TestCases\ai_processing\llm_client.py", line 78, in _call_ollama
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\varak\AppData\Roaming\Python\Python314\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-04-15 17:03:12,056 | ERROR | __main__ | No test cases were generated

@@ -13,8 +13,8 @@ logger = logging.getLogger(__name__)
 # -------------------------------------------------------------------
 # Constants
 # -------------------------------------------------------------------
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "mistral"
+OLLAMA_URL = "http://localhost:11434/api/"
+MODEL = "llama3.2"
 
 # -------------------------------------------------------------------
 # Public API
